@@ -1,6 +1,6 @@
 // Função para calcular o tempo de relacionamento
 function calcularTempo() {
-    const dataInicio = new Date("2022-06-15"); // Substitua pela data que você e sua namorada se conheceram
+    const dataInicio = new Date("2024-07-05"); // Substitua pela data que você e sua namorada se conheceram
     const dataAtual = new Date();
 
     const diff = dataAtual - dataInicio;
