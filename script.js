@@ -1,4 +1,4 @@
-// Função para calcular o tempo de relacionamento
+// Função para calcular o tempo de relacionamento de maneira sutil
 function calcularTempo() {
     const dataInicio = new Date("2024-07-05T19:00:00"); // Data e hora que vocês se conheceram
     const dataAtual = new Date();
@@ -19,14 +19,20 @@ function calcularTempo() {
     const minutosRestantes = minutos % 60;
     const segundosRestantes = segundos % 60;
 
-    // Exibindo o tempo de relacionamento na página
+    // Exibindo o tempo de relacionamento na página de forma sutil
     const tempoRelacao = `${anos} ano(s), ${meses} mês(es), ${dias} dia(s), ${horasRestantes} hora(s), ${minutosRestantes} minuto(s) e ${segundosRestantes} segundo(s)`;
 
-    // Atualizando o texto na página
-    document.getElementById("tempo-relacionamento").textContent = `Estamos juntos há: ${tempoRelacao}`;
+    const tempoElemento = document.getElementById("tempo-relacionamento");
+    tempoElemento.textContent = `Estamos juntos há: ${tempoRelacao}`;
+
+    // Suaviza a transição do tempo (transparência sutil)
+    tempoElemento.style.opacity = 0;
+    setTimeout(() => {
+        tempoElemento.style.opacity = 1;
+    }, 100);
 }
 
-// Função para alternar as fotos
+// Função para alternar as fotos com o mesmo tamanho e local
 let indiceFoto = 0;
 const fotos = document.querySelectorAll('.photo');
 
@@ -36,6 +42,7 @@ function alternarFotos() {
     indiceFoto = (indiceFoto + 1) % fotos.length;
 }
 
+// Iniciar alternância de fotos a cada 3 segundos
 setInterval(alternarFotos, 3000); // Alterna as fotos a cada 3 segundos
 
 // Chama a função para calcular o tempo
