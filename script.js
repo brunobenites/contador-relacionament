@@ -23,7 +23,7 @@ function calcularTempo() {
     const tempoRelacao = `${anos} ano(s), ${meses} mês(es), ${dias} dia(s), ${horasRestantes} hora(s), ${minutosRestantes} minuto(s) e ${segundosRestantes} segundo(s)`;
 
     const tempoElemento = document.getElementById("tempo-relacionamento");
-    tempoElemento.textContent = `Estamos juntos há: ${tempoRelacao}`;
+    tempoElemento.textContent = `Tempo com o amor da minha vida: ${tempoRelacao}`;
 
     // Suaviza a transição do tempo (transparência sutil)
     tempoElemento.style.opacity = 0;
